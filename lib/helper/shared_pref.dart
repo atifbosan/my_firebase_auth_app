@@ -26,4 +26,9 @@ class SPHelper {
       await pref.remove(key);
     }
   }
+
+  static Future removeAll() async {
+    final pref = await SharedPreferences.getInstance();
+    await pref.clear();
+  }
 }

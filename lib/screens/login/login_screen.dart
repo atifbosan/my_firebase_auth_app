@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fire/screens/signup/signup_screen.dart';
 
-import '../../services/firebase_services.dart';
+import '../../auth/fir_auth.dart';
 import '../../widgets/progressIndicator_widget.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -56,8 +56,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () async {
                   progressIndicatorWidget(context);
                   if (_formKey.currentState!.validate()) {
-                    await FirebaseServices.signIn(
-                        context, txtEmail.text, txtPassword.text);
+                    await Auth.signIn(context, txtEmail.text, txtPassword.text);
                   }
                   dismissIndicator();
                 },

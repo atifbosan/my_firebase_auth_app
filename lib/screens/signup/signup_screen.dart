@@ -4,8 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_fire/services/firebase_services.dart';
 
+import '../../auth/fir_auth.dart';
 import '../../widgets/progressIndicator_widget.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -106,7 +106,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   onPressed: () async {
                     progressIndicatorWidget(context);
                     if (_formKey.currentState!.validate()) {
-                      await FirebaseServices.signUp(
+                      await Auth.signUp(
                           ctx: context,
                           pickedFile: pickedFile,
                           email: txtEmail.text,

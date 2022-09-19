@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fire/screens/dashbaord/my_home.dart';
 
 import '../screens/login/login_screen.dart';
+import '../screens/map/map_tracking.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Firebase',
-      home: AuthChecker(),
+      home: MapTracking(),
     );
   }
 }
